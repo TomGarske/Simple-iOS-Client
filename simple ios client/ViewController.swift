@@ -34,20 +34,9 @@ extension ViewController {
                 let x = String(format: "%.2f", data!.acceleration.x)
                 let y = String(format: "%.2f", data!.acceleration.y)
                 let z = String(format: "%.2f", data!.acceleration.z)
-                let time =
-                print(x,y,z)
+                let time = data!.timestamp
+                print(x,y,z,time)
             }
         }
     }
-
-    func getCurrentTimestamp(){
-        let formatter = NSDateFormatter()
-        formatter.dateStyle = NSDateFormatterStyle.LongStyle
-        formatter.timeStyle = .MediumStyle
-
-        let dateString = formatter.stringFromDate(morningOfChristmas)
-    }
 }
-
-
-//"yyyy_MM_dd_HH_mm_ss"
