@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        recordAccelerometer()
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,15 +28,21 @@ extension ViewController {
 
     func recordAccelerometer() {
         if motionManager.isAccelerometerAvailable {
-            motionManager.accelerometerUpdateInterval = 0.1
+            let sampling = 0.05
+            motionManager.accelerometerUpdateInterval = sampling
+            var lastTime = TimeInterval()
             motionManager.startAccelerometerUpdates(to: OperationQueue.main) {
                 (data: CMAccelerometerData?, error: Error?) in
-                print(data!.acceleration)
-                let x = String(format: "%.2f", data!.acceleration.x)
-                let y = String(format: "%.2f", data!.acceleration.y)
-                let z = String(format: "%.2f", data!.acceleration.z)
-                let time = data!.timestamp
-                print(x,y,z,time)
+                //print(data!.acceleration)
+                let x = data!.acceleration.x
+                let y = data!.acceleration.y
+                let z = data!.acceleration.z
+                let time = (data!.timestamp - lastTime)*1000
+                lastTime = data!.timestamp
+
+                if(time<1000){
+                    print(x,y,z,time)
+                }
             }
         }
     }
