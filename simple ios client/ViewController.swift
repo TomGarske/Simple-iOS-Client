@@ -24,7 +24,7 @@ class ViewController: UIViewController {
 extension ViewController {
     func recordAccelerometer() {
         if motionManager.isAccelerometerAvailable {
-            let sampling = 1.0//0.05
+            let sampling = 0.05
             motionManager.accelerometerUpdateInterval = sampling
             var lastTime = TimeInterval()
             motionManager.startAccelerometerUpdates(to: OperationQueue.main) {
