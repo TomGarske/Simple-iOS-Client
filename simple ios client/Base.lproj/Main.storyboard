@@ -48,7 +48,7 @@
                                 <rect key="frame" x="16" y="318.5" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zev-z5-Eah">
                                 <rect key="frame" x="16" y="428.5" width="343" height="36"/>
@@ -70,7 +70,7 @@
                                 <rect key="frame" x="16" y="368.5" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -137,9 +137,9 @@
                         <color key="tintColor" red="0.96862745100000003" green="0.57254901960000004" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
+                        <segue destination="J20-Wj-q1e" kind="relationship" relationship="viewControllers" id="6y8-Az-Saa"/>
                         <segue destination="Wn2-ez-3dG" kind="relationship" relationship="viewControllers" id="zPY-Pv-dqy"/>
                         <segue destination="w6D-MM-0ex" kind="relationship" relationship="viewControllers" id="gGS-sE-lS5"/>
-                        <segue destination="J20-Wj-q1e" kind="relationship" relationship="viewControllers" id="6y8-Az-Saa"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7zA-nd-eIO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -202,10 +202,10 @@
             </objects>
             <point key="canvasLocation" x="1990" y="107"/>
         </scene>
-        <!--Activities Table-->
+        <!--Heartrate Table-->
         <scene sceneID="Iw0-ke-l03">
             <objects>
-                <tableViewController id="EAM-IS-1Ij" userLabel="Activities Table" customClass="HeartRateTableViewController" sceneMemberID="viewController">
+                <tableViewController id="EAM-IS-1Ij" userLabel="Heartrate Table" customClass="HeartRateTableViewController" customModule="simple_ios_client" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="70" sectionHeaderHeight="34" sectionFooterHeight="1" id="Nvj-KD-y0n">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -238,7 +238,7 @@
                                         <constraint firstAttribute="width" constant="110" id="N03-rr-gcc"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heartrate Measurement" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQ1-ce-f37">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap For New Recording" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQ1-ce-f37">
                                     <rect key="frame" x="37.5" y="167" width="300" height="24"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="300" id="EGI-DI-Y3k"/>
@@ -255,14 +255,7 @@
                                         <constraint firstAttribute="height" constant="2" id="0Ru-sC-DQA"/>
                                     </constraints>
                                 </view>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOP-Pe-lqO">
-                                    <rect key="frame" x="335" y="11" width="24" height="24"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="24" id="P5d-Fc-Hfb"/>
-                                    </constraints>
-                                    <state key="normal" title="Button" image="helpGlobal24X24"/>
-                                </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="beats / minute" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5i-Va-UP3">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BPM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5i-Va-UP3">
                                     <rect key="frame" x="138" y="120" width="100" height="17"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="100" id="obN-ZM-x07"/>
@@ -275,11 +268,9 @@
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstItem="d8x-Lo-Up2" firstAttribute="leading" secondItem="O3E-iY-p5W" secondAttribute="leading" id="0h4-p4-G8d"/>
-                                <constraint firstItem="cOP-Pe-lqO" firstAttribute="top" secondItem="O3E-iY-p5W" secondAttribute="top" constant="11" id="0vF-IQ-9aT"/>
                                 <constraint firstItem="K5i-Va-UP3" firstAttribute="centerX" secondItem="O3E-iY-p5W" secondAttribute="centerX" id="3WD-l9-yKP"/>
                                 <constraint firstItem="RQ1-ce-f37" firstAttribute="top" secondItem="K5i-Va-UP3" secondAttribute="bottom" constant="43.5" id="3jO-D1-VzQ"/>
                                 <constraint firstItem="K5i-Va-UP3" firstAttribute="top" secondItem="O3E-iY-p5W" secondAttribute="top" constant="120" id="6Sg-cz-dh1"/>
-                                <constraint firstAttribute="trailing" secondItem="cOP-Pe-lqO" secondAttribute="trailing" constant="16" id="9Z9-dh-e6p"/>
                                 <constraint firstItem="aUb-Qr-CwA" firstAttribute="centerX" secondItem="O3E-iY-p5W" secondAttribute="centerX" id="CX4-gW-lXb"/>
                                 <constraint firstItem="RQ1-ce-f37" firstAttribute="centerX" secondItem="O3E-iY-p5W" secondAttribute="centerX" id="D2O-Ml-CM6"/>
                                 <constraint firstAttribute="bottom" secondItem="d8x-Lo-Up2" secondAttribute="bottom" id="ESY-h5-6oU"/>
@@ -303,14 +294,14 @@
                             </constraints>
                             <variation key="default">
                                 <mask key="constraints">
-                                    <exclude reference="lH5-hy-71u"/>
                                     <exclude reference="LVq-qU-VyP"/>
+                                    <exclude reference="lH5-hy-71u"/>
                                     <exclude reference="neE-a2-1Zp"/>
-                                    <exclude reference="mBN-Bg-cPI"/>
-                                    <exclude reference="cqc-P7-5fZ"/>
+                                    <exclude reference="3jO-D1-VzQ"/>
                                     <exclude reference="Wpc-Sj-o57"/>
                                     <exclude reference="g4d-sq-RSe"/>
-                                    <exclude reference="3jO-D1-VzQ"/>
+                                    <exclude reference="cqc-P7-5fZ"/>
+                                    <exclude reference="mBN-Bg-cPI"/>
                                     <exclude reference="RvE-IE-v2k"/>
                                     <exclude reference="qYD-dB-6K3"/>
                                 </mask>
@@ -321,7 +312,7 @@
                                 <rect key="frame" x="0.0" y="264" width="375" height="34"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rr7-ih-ous" id="nSQ-sn-ar7">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="33"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="33.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZcN-RU-c8N">
@@ -356,8 +347,8 @@
                                         <mask key="constraints">
                                             <exclude reference="FFb-u0-fJw"/>
                                             <exclude reference="OVJ-nT-8f5"/>
-                                            <exclude reference="dMm-Gj-b0L"/>
                                             <exclude reference="Tg9-DR-IhK"/>
+                                            <exclude reference="dMm-Gj-b0L"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -366,7 +357,7 @@
                                 <rect key="frame" x="0.0" y="298" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TIJ-fC-Bzb" id="QFO-rk-EQi">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mrI-Wb-Nq8">
@@ -415,8 +406,8 @@
                                                     <variation key="default">
                                                         <mask key="constraints">
                                                             <exclude reference="n9o-W7-j55"/>
-                                                            <exclude reference="faz-0p-4fz"/>
                                                             <exclude reference="dgP-Tq-hlX"/>
+                                                            <exclude reference="faz-0p-4fz"/>
                                                         </mask>
                                                     </variation>
                                                 </view>
@@ -443,10 +434,10 @@
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
-                                            <exclude reference="MhJ-eo-XOi"/>
                                             <exclude reference="0kF-9L-Pff"/>
-                                            <exclude reference="XS3-FM-Bxk"/>
+                                            <exclude reference="MhJ-eo-XOi"/>
                                             <exclude reference="R6W-ph-jMh"/>
+                                            <exclude reference="XS3-FM-Bxk"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -463,7 +454,8 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Heartrate" id="NgG-Y2-5bb"/>
                     <connections>
-                        <outlet property="currentlyViewingDate" destination="P3l-Z8-oKP" id="6nM-nK-wLW"/>
+                        <outlet property="currentlyViewingDate" destination="P3l-Z8-oKP" id="VT1-Rv-sqy"/>
+                        <outlet property="messageLabel" destination="RQ1-ce-f37" id="GB7-aW-NHX"/>
                         <outlet property="progressView" destination="aUb-Qr-CwA" id="HK0-2n-b7w"/>
                         <outlet property="progressViewBack" destination="eSm-Zv-NqB" id="rvF-xX-wMX"/>
                     </connections>
@@ -496,6 +488,5 @@
         <image name="179-notepad" width="22" height="28"/>
         <image name="250-stats" width="30" height="20"/>
         <image name="77-ekg" width="26" height="22"/>
-        <image name="helpGlobal24X24" width="24" height="24"/>
     </resources>
 </document>
