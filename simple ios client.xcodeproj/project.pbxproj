@@ -14,6 +14,7 @@
 		6F85AFD71DFB1CE10044A2B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F85AFD51DFB1CE10044A2B6 /* LaunchScreen.storyboard */; };
 		6F85AFE21DFB1CE10044A2B6 /* simple_ios_clientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F85AFE11DFB1CE10044A2B6 /* simple_ios_clientTests.swift */; };
 		6F85AFED1DFB1CE10044A2B6 /* simple_ios_clientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F85AFEC1DFB1CE10044A2B6 /* simple_ios_clientUITests.swift */; };
+		6FB4C6861DFE512B00F510A9 /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB4C6851DFE512B00F510A9 /* LoginTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		6F85AFE81DFB1CE10044A2B6 /* simple ios clientUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "simple ios clientUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F85AFEC1DFB1CE10044A2B6 /* simple_ios_clientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = simple_ios_clientUITests.swift; sourceTree = "<group>"; };
 		6F85AFEE1DFB1CE10044A2B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6FB4C6851DFE512B00F510A9 /* LoginTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				6F85AFCC1DFB1CE10044A2B6 /* AppDelegate.swift */,
 				6F85AFCE1DFB1CE10044A2B6 /* ViewController.swift */,
+				6FB4C6851DFE512B00F510A9 /* LoginTableViewController.swift */,
 				6F85AFD01DFB1CE10044A2B6 /* Main.storyboard */,
 				6F85AFD31DFB1CE10044A2B6 /* Assets.xcassets */,
 				6F85AFD51DFB1CE10044A2B6 /* LaunchScreen.storyboard */,
@@ -264,6 +267,7 @@
 			files = (
 				6F85AFCF1DFB1CE10044A2B6 /* ViewController.swift in Sources */,
 				6F85AFCD1DFB1CE10044A2B6 /* AppDelegate.swift in Sources */,
+				6FB4C6861DFE512B00F510A9 /* LoginTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +516,7 @@
 				6F85AFF31DFB1CE10044A2B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6F85AFF41DFB1CE10044A2B6 /* Build configuration list for PBXNativeTarget "simple ios clientTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +525,7 @@
 				6F85AFF61DFB1CE10044A2B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6F85AFF71DFB1CE10044A2B6 /* Build configuration list for PBXNativeTarget "simple ios clientUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +534,7 @@
 				6F85AFF91DFB1CE10044A2B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
