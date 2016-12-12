@@ -1,6 +1,6 @@
 import UIKit
 
-class HeartRateViewTableViewCell: UITableViewCell {
+class RateViewTableViewCell: UITableViewCell {
 
     @IBOutlet weak var activityTitle: UILabel!
     @IBOutlet weak var activitySubtitle: UILabel!

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		11021755A561F1953052509D /* Pods_simple_ios_client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC2CC49197800D21A28E3217 /* Pods_simple_ios_client.framework */; };
+		6F26B8811DFF502800D32315 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F26B8801DFF502800D32315 /* ProfileViewController.swift */; };
 		6F85AFCD1DFB1CE10044A2B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F85AFCC1DFB1CE10044A2B6 /* AppDelegate.swift */; };
 		6F85AFCF1DFB1CE10044A2B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F85AFCE1DFB1CE10044A2B6 /* ViewController.swift */; };
 		6F85AFD21DFB1CE10044A2B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F85AFD01DFB1CE10044A2B6 /* Main.storyboard */; };
@@ -16,8 +17,8 @@
 		6F85AFE21DFB1CE10044A2B6 /* simple_ios_clientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F85AFE11DFB1CE10044A2B6 /* simple_ios_clientTests.swift */; };
 		6F85AFED1DFB1CE10044A2B6 /* simple_ios_clientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F85AFEC1DFB1CE10044A2B6 /* simple_ios_clientUITests.swift */; };
 		6FB4C6861DFE512B00F510A9 /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB4C6851DFE512B00F510A9 /* LoginTableViewController.swift */; };
-		6FB4C6891DFF174F00F510A9 /* HeartRateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB4C6871DFF174F00F510A9 /* HeartRateTableViewController.swift */; };
-		6FB4C68A1DFF174F00F510A9 /* HeartRateViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB4C6881DFF174F00F510A9 /* HeartRateViewTableViewCell.swift */; };
+		6FB4C6891DFF174F00F510A9 /* RateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB4C6871DFF174F00F510A9 /* RateTableViewController.swift */; };
+		6FB4C68A1DFF174F00F510A9 /* RateViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB4C6881DFF174F00F510A9 /* RateViewTableViewCell.swift */; };
 		6FB4C68C1DFF2CEC00F510A9 /* RecordedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB4C68B1DFF2CEC00F510A9 /* RecordedItem.swift */; };
 		EF8B30D36561515F0C33375C /* Pods_simple_ios_clientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BCE761E17E28353632F48C6 /* Pods_simple_ios_clientTests.framework */; };
 		F19C8F0AC3675E14A0FD9FF6 /* Pods_simple_ios_clientUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36B1A066A2C12EC6C294D180 /* Pods_simple_ios_clientUITests.framework */; };
@@ -44,6 +45,7 @@
 		3624EB9DF5DB2B67BDA877F5 /* Pods-simple ios clientUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simple ios clientUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-simple ios clientUITests/Pods-simple ios clientUITests.release.xcconfig"; sourceTree = "<group>"; };
 		36B1A066A2C12EC6C294D180 /* Pods_simple_ios_clientUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_simple_ios_clientUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BCE761E17E28353632F48C6 /* Pods_simple_ios_clientTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_simple_ios_clientTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F26B8801DFF502800D32315 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		6F85AFC91DFB1CE00044A2B6 /* simple ios client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "simple ios client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F85AFCC1DFB1CE10044A2B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6F85AFCE1DFB1CE10044A2B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,8 +60,8 @@
 		6F85AFEC1DFB1CE10044A2B6 /* simple_ios_clientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = simple_ios_clientUITests.swift; sourceTree = "<group>"; };
 		6F85AFEE1DFB1CE10044A2B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6FB4C6851DFE512B00F510A9 /* LoginTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTableViewController.swift; sourceTree = "<group>"; };
-		6FB4C6871DFF174F00F510A9 /* HeartRateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRateTableViewController.swift; sourceTree = "<group>"; };
-		6FB4C6881DFF174F00F510A9 /* HeartRateViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRateViewTableViewCell.swift; sourceTree = "<group>"; };
+		6FB4C6871DFF174F00F510A9 /* RateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateTableViewController.swift; sourceTree = "<group>"; };
+		6FB4C6881DFF174F00F510A9 /* RateViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateViewTableViewCell.swift; sourceTree = "<group>"; };
 		6FB4C68B1DFF2CEC00F510A9 /* RecordedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordedItem.swift; sourceTree = "<group>"; };
 		736A220AF7703EBCB0757549 /* Pods-simple ios clientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simple ios clientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-simple ios clientTests/Pods-simple ios clientTests.debug.xcconfig"; sourceTree = "<group>"; };
 		84A660235763B11955C143E0 /* Pods-simple ios clientUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-simple ios clientUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-simple ios clientUITests/Pods-simple ios clientUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -122,11 +124,12 @@
 		6F85AFCB1DFB1CE00044A2B6 /* simple ios client */ = {
 			isa = PBXGroup;
 			children = (
-				6FB4C6871DFF174F00F510A9 /* HeartRateTableViewController.swift */,
+				6FB4C6871DFF174F00F510A9 /* RateTableViewController.swift */,
+				6FB4C6881DFF174F00F510A9 /* RateViewTableViewCell.swift */,
 				6FB4C68B1DFF2CEC00F510A9 /* RecordedItem.swift */,
-				6FB4C6881DFF174F00F510A9 /* HeartRateViewTableViewCell.swift */,
 				6F85AFCC1DFB1CE10044A2B6 /* AppDelegate.swift */,
 				6F85AFCE1DFB1CE10044A2B6 /* ViewController.swift */,
+				6F26B8801DFF502800D32315 /* ProfileViewController.swift */,
 				6FB4C6851DFE512B00F510A9 /* LoginTableViewController.swift */,
 				6F85AFD01DFB1CE10044A2B6 /* Main.storyboard */,
 				6F85AFD31DFB1CE10044A2B6 /* Assets.xcassets */,
@@ -445,12 +448,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FB4C6891DFF174F00F510A9 /* HeartRateTableViewController.swift in Sources */,
+				6FB4C6891DFF174F00F510A9 /* RateTableViewController.swift in Sources */,
 				6F85AFCF1DFB1CE10044A2B6 /* ViewController.swift in Sources */,
 				6FB4C68C1DFF2CEC00F510A9 /* RecordedItem.swift in Sources */,
 				6F85AFCD1DFB1CE10044A2B6 /* AppDelegate.swift in Sources */,
+				6F26B8811DFF502800D32315 /* ProfileViewController.swift in Sources */,
 				6FB4C6861DFE512B00F510A9 /* LoginTableViewController.swift in Sources */,
-				6FB4C68A1DFF174F00F510A9 /* HeartRateViewTableViewCell.swift in Sources */,
+				6FB4C68A1DFF174F00F510A9 /* RateViewTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,8 +12,8 @@ class RecordedItem {
     let value : String
     let timestamp : String
     let date : Date
-    init(val : Double, time : Date) {
-        value = String.init(format: "%.2f Beats Per Minute", val)
+    init(val : Double, time : Date, type : String) {
+        value = String.init(format: "%.2f %@ Per Minute", val, type)
         let formatt = DateFormatter()
         formatt.dateStyle = .long
         formatt.timeStyle = .long
