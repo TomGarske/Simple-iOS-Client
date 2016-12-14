@@ -16,7 +16,7 @@ class RecordedItem {
         value = String.init(format: "%.2f %@ Per Minute", val, type)
         let formatt = DateFormatter()
         formatt.dateStyle = .long
-        formatt.timeStyle = .long
+        formatt.timeStyle = .short
         timestamp = formatt.string(from: time)
         date = time
     }

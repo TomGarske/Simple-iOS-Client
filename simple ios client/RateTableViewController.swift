@@ -5,7 +5,7 @@ import CoreMotion
 
 class RateTableViewController: UITableViewController {
 
-    var serverPath="http://10.6.17.32:5000/api/v1.0/"
+    var serverPath="http://192.168.0.23:5000/api/v1.0/"
     let motionManager = CMMotionManager()
 
     @IBOutlet weak var progressView: UAProgressView!
@@ -27,8 +27,12 @@ class RateTableViewController: UITableViewController {
         items = [RecordedItem]()
         configureProgressView()
         displayDate()
-        self.serverPath = self.serverPath + String(self.rateType) + "/0"
-        print(self.rateType)
+        self.serverPath = self.serverPath + String(self.rateType) + "/" + String(self.getUserId())
+        loadItemsFromHistory()
+    }
+
+    func loadItemsFromHistory(){
+        self.getRequestHistory(path: self.serverPath)
     }
 
     func displayDate() {
@@ -39,7 +43,6 @@ class RateTableViewController: UITableViewController {
         self.currentlyViewingDate.text = dateString
     }
 
-    var lastrate : Double = 0
     func configureProgressView() {
         if self.rateType == "heartrate" {
             self.progressViewBack.tintColor = UIColor.orange
@@ -87,6 +90,8 @@ class RateTableViewController: UITableViewController {
         messageLabel.text = "Measuring..."
         self.progressView.setProgress(0, animated: false)
         self.progressView.setProgress(100, animated: true)
+        let someLabel =  progressView?.centralView as! UICountingLabel
+        someLabel.text = "0"
         startAccelerometer()
         _ = Timer.scheduledTimer(timeInterval: recordingDuration,
                                          target: self,
@@ -103,9 +108,10 @@ class RateTableViewController: UITableViewController {
 
     func sendToServer(){
         print("Sending to server...")
+        messageLabel.text = "Calculating..."
         motionManager.stopAccelerometerUpdates()
         let json = [ "dt":self.dt,"values":self.newData] as [String : Any]
-        self.sendRequest(path: self.serverPath,data:json,method:"POST")
+        self.sendRequestRate(path: self.serverPath,data:json,method:"POST")
     }
 
     var newrate : Double = 0
@@ -113,8 +119,7 @@ class RateTableViewController: UITableViewController {
         print(String.init(format:"Presenting Result: %f", newrate))
         messageLabel.text = "Tap For New Recording"
         let someLabel =  progressView?.centralView as! UICountingLabel
-        someLabel.count(from: CGFloat(self.lastrate), to: CGFloat(newrate))
-        self.lastrate = newrate
+        someLabel.count(from: CGFloat(0.0), to: CGFloat(newrate))
         items.append(RecordedItem(val:Double(newrate), time: Date(), type:getType()))
         items = items.sorted(by: { $0.date > $1.date })
         refreshTable()
@@ -185,7 +190,7 @@ extension RateTableViewController {
 // Extension for sending post requests
 extension RateTableViewController {
 
-    func sendRequest(path : String, data : Dictionary<String, Any>, method : String) {
+    func sendRequestRate(path : String, data : Dictionary<String, Any>, method : String){
         print(path)
         let url = URL(string: path)!
         let session = URLSession.shared
@@ -207,11 +212,52 @@ extension RateTableViewController {
                     return
                 }
                 let json = try? JSONSerialization.jsonObject(with: data!, options: [])
-                self.newrate = (json as! NSDictionary!)[self.rateType] as! Double
+                let dict = (json as! NSDictionary!)
+                if((dict?.allKeys.count)! > 0){
+                    self.newrate = dict![self.rateType] as! Double
+                }
                 print(String.init(format:"Fetched Result: %f", self.newrate))
             }
             task.resume()
         }catch { print(error) }
+    }
+
+    func getRequestHistory(path : String){
+        print(path)
+        let url = URL(string: path)!
+        let session = URLSession.shared
+        do {
+            // Set URLRequest body and header
+            var request = URLRequest(url: url)
+            request.httpMethod = "GET"
+            request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+            request.cachePolicy = .reloadIgnoringCacheData
+
+            // Send request and capture response
+            let task = session.dataTask(with: request){ data,response,error in
+                if error != nil{
+                    print(error!.localizedDescription)
+                    return
+                }
+                let json = try? JSONSerialization.jsonObject(with: data!, options: [])
+                let dict = (json as! NSDictionary!)
+                let items = dict?["items"] as! Array<NSDictionary>
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                dateFormatter.timeZone = TimeZone.init(identifier: "UTC")
+                for item in items {
+                    print(item)
+                    let rate : Double = item["recordedValue"] as! Double
+                    let time : Date = dateFormatter.date(from: item["recordedDatetime"] as! String)!
+                    self.items.append(RecordedItem(val:rate,time:time, type:self.getType()))
+                }
+                self.items = self.items.sorted(by: { $0.date > $1.date })
+                DispatchQueue.main.async {
+                    self.refreshTable()
+                }
+            }
+            task.resume()
+        }
     }
     
 }
